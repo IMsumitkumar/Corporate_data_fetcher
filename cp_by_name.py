@@ -30,7 +30,7 @@ if __name__ == '__main__':
     company_name = str(input("Enter Company Name:")).replace(' ', '-')
     data_rows = fetch_data(url.format(comp_name=company_name))
 
-    with open('data.csv', 'w', newline='') as csvfile:
+    with open('./dataByName/cp-by-{cp}.csv'.format(cp=company_name), 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(["CIN", "Name", "address"])
         csv_writer.writerows(data_rows)
